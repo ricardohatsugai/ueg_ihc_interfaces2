@@ -1,4 +1,4 @@
-# *UEG - Campus Trindade*    <img src="imagens/uegTrindade.png" width="60" height="60">
+# *UEG - Campus Trindade*    <img src="imagens/uegTrindade.png" width="80" height="80">
 
 ## *Versão 1 - 09/08/2022*
 
