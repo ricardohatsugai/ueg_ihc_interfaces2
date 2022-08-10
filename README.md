@@ -22,8 +22,8 @@
 - Ricardo Hatsugai
 
 ### Ferramentas utilizadas para este projeto:
-- Delphi 10.1 (Tokio-Trial).
-- Microsoft Access 2019 (Modo de compatibilidade 2003).
+- Delphi 10.1 (Berlin-Trial).
+- Firebird 3.5
 
 ## **Sobre o sistema**
 
