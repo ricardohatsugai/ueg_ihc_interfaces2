@@ -4,13 +4,15 @@ SYSFIN - Sistema de Gerenciamento de Finanças.
 	
 Tabelas
 
-- Despesa
+- Despesas:
+
 	1 - id int not null auto incremento;
 	2 - data date not null;
 	3 - descricao varchar(30) not null;
 	4 - valor decimal(18,2) not null;
 	
-- Usuario
+- Usuarios:
+
 	1 - id int not null auto incremento;
 	2 - nome varchar(30) not null;
 	3 - cpf varchar(11);
