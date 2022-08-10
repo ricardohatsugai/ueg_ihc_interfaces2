@@ -33,7 +33,7 @@
 	
 Tabelas
 
-- Despesa:
+- Despesas:
 
 	1 - id int not null auto incremento;
   
@@ -43,7 +43,8 @@ Tabelas
   
 	4 - valor decimal(18,2) not null;
 	
-- Usuario
+- Usuarios:
+
 	1 - id int not null auto incremento;
   
 	2 - nome varchar(30) not null;
