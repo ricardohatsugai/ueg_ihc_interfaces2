@@ -24,3 +24,34 @@
 ### Ferramentas utilizadas para este projeto:
 - Delphi 10.1 (Tokio-Trial).
 - Microsoft Access 2019 (Modo de compatibilidade 2003).
+
+## **Sobre o sistema**
+
+## *SYSFIN - Sistema de Gerenciamento de Finanças*
+
+**Este sistema será um sistema simples de cadastro de lançamentos de despesa, usuario, consultas.**
+	
+Tabelas
+
+- Despesa:
+
+	1 - id int not null auto incremento;
+  
+	2 - data date not null;
+  
+	3 - descricao varchar(30) not null;
+  
+	4 - valor decimal(18,2) not null;
+	
+- Usuario
+	1 - id int not null auto incremento;
+  
+	2 - nome varchar(30) not null;
+  
+	3 - cpf varchar(11);
+  
+	4 - ident varchar(30);
+  
+	5 - username varchar(30);
+  
+	6 - senha varchar(50);
