@@ -19,9 +19,11 @@ type
     Bevel1: TBevel;
     Image1: TImage;
     StatusBar1: TStatusBar;
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public
+    flagAtvivar : Boolean;
     { Public declarations }
   end;
 
@@ -31,5 +33,22 @@ var
 implementation
 
 {$R *.dfm}
+
+uses UFrmLogin;
+
+procedure TFrmPrincipal.FormCreate(Sender: TObject);
+begin
+flagAtvivar := False;
+Try
+  Application.CreateForm(TFrmLogin, FrmLogin);
+  FrmLogin.ShowModal;
+
+  if flagAtvivar = False then
+    Application.Terminate;
+
+Finally
+  FreeAndNil(FrmLogin);
+End;
+end;
 
 end.

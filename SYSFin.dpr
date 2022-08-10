@@ -2,7 +2,8 @@ program SYSFin;
 
 uses
   Vcl.Forms,
-  UFrmPrincipal in 'UFrmPrincipal.pas' {FrmPrincipal};
+  UFrmPrincipal in 'UFrmPrincipal.pas' {FrmPrincipal},
+  UFrmLogin in 'UFrmLogin.pas' {FrmLogin};
 
 {$R *.res}
 

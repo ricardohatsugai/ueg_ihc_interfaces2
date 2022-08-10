@@ -15,6 +15,7 @@ object FrmPrincipal: TFrmPrincipal
   Menu = MainMenu1
   OldCreateOrder = False
   Position = poScreenCenter
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object Panel1: TPanel
@@ -24,10 +25,6 @@ object FrmPrincipal: TFrmPrincipal
     Height = 616
     Align = alClient
     TabOrder = 0
-    ExplicitLeft = 200
-    ExplicitTop = 128
-    ExplicitWidth = 185
-    ExplicitHeight = 41
     object Bevel1: TBevel
       Left = 1
       Top = 1
@@ -9968,9 +9965,6 @@ object FrmPrincipal: TFrmPrincipal
         item
           Width = 50
         end>
-      ExplicitLeft = 352
-      ExplicitTop = 424
-      ExplicitWidth = 0
     end
   end
   object MainMenu1: TMainMenu
