@@ -30,12 +30,19 @@ implementation
 
 {$R *.dfm}
 
+uses UFrmPrincipal;
+
 procedure TFrmLogin.BtnSalvarClick(Sender: TObject);
 begin
   if (Edit1.Text = '') or (Edit2.Text = '') then
   begin
     ShowMessage('Os campos usuário e senha não podem ser nulos!');
     Edit1.SetFocus;
+  end else
+  begin
+    // Aqui será construido o algorítmo para validação de usuário.
+    FrmPrincipal.flagAtvivar := True;
+    ModalResult := 01;
   end;
 end;
 

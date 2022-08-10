@@ -3,7 +3,7 @@ object FrmLogin: TFrmLogin
   Top = 0
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
-  Caption = 'Login'
+  Caption = 'Autentica'#231#227'o de Usu'#225'rios'
   ClientHeight = 378
   ClientWidth = 544
   Color = clBtnFace
@@ -23,10 +23,6 @@ object FrmLogin: TFrmLogin
     Height = 378
     Align = alClient
     TabOrder = 0
-    ExplicitLeft = 224
-    ExplicitTop = 128
-    ExplicitWidth = 185
-    ExplicitHeight = 41
     object Label1: TLabel
       Left = 112
       Top = 16
@@ -71,6 +67,7 @@ object FrmLogin: TFrmLogin
       Top = 101
       Width = 287
       Height = 31
+      Hint = 'Digite o nome de usu'#225'rio'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -19
@@ -84,12 +81,14 @@ object FrmLogin: TFrmLogin
       Top = 171
       Width = 287
       Height = 31
+      Hint = 'Digite sua senha'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -19
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
+      PasswordChar = '*'
       TabOrder = 1
     end
     object BtnSalvar: TBitBtn
