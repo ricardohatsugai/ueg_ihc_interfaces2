@@ -9968,8 +9968,8 @@ object FrmPrincipal: TFrmPrincipal
     end
   end
   object MainMenu1: TMainMenu
-    Left = 448
-    Top = 192
+    Left = 136
+    Top = 72
     object Cadastros1: TMenuItem
       Caption = '&Cadastros'
       Hint = 'Menu de Cadastros'
@@ -9977,6 +9977,7 @@ object FrmPrincipal: TFrmPrincipal
         Caption = 'Usu'#225'rios'
         Hint = 'Cadastros de Usu'#225'rios'
         ShortCut = 16469
+        OnClick = Usurios1Click
       end
       object Despesa1: TMenuItem
         Caption = 'Despesas'
