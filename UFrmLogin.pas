@@ -17,6 +17,7 @@ type
     BtnSalvar: TBitBtn;
     BtnCancelar: TBitBtn;
     procedure BtnSalvarClick(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
   public
@@ -30,20 +31,58 @@ implementation
 
 {$R *.dfm}
 
-uses UFrmPrincipal;
+uses UFrmPrincipal, UDM_Login;
 
 procedure TFrmLogin.BtnSalvarClick(Sender: TObject);
 begin
+
   if (Edit1.Text = '') or (Edit2.Text = '') then
   begin
     ShowMessage('Os campos usuário e senha não podem ser nulos!');
     Edit1.SetFocus;
   end else
   begin
-    // Aqui será construido o algorítmo para validação de usuário.
-    FrmPrincipal.flagAtvivar := True;
-    ModalResult := 01;
+    Try
+      Application.CreateForm(TDM_Login, DM_Login);
+      DM_Login.FDConnection1.Connected := True;
+      DM_Login.FDQ_Usuarios.Active := True;
+      DM_Login.FDQ_Usuarios.First;
+
+      if DM_Login.FDQ_Usuarios.Locate('USERNAME',Edit1.Text,[]) then
+      begin
+        if DM_Login.FDQ_UsuariosSENHA.AsString = Edit2.Text then
+        begin
+          FrmPrincipal.flagAtvivar := True;
+          FrmPrincipal.StatusBar1.Panels[0].Text := 'Usuário logado: ' + DM_Login.FDQ_UsuariosNOME.AsString;
+          ModalResult := 01;
+        end else
+        begin
+          ShowMessage('Usuário e senha não conferem!');
+          Edit1.SetFocus;
+        end;
+      end else
+      begin
+        ShowMessage('Usuário e senha não conferem!');
+        Edit1.SetFocus;
+      end;
+
+
+      if DM_Login.FDQ_Usuarios.Active = True then
+        DM_Login.FDQ_Usuarios.Active := False;
+
+      if DM_Login.FDConnection1.Connected = True then
+        DM_Login.FDConnection1.Connected := False;
+
+    Finally
+      FreeAndNil(DM_Login);
+    End;
+
   end;
+end;
+
+procedure TFrmLogin.FormShow(Sender: TObject);
+begin
+Edit1.SetFocus;
 end;
 
 end.

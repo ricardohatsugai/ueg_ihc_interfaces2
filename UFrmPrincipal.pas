@@ -20,6 +20,7 @@ type
     Image1: TImage;
     StatusBar1: TStatusBar;
     procedure FormCreate(Sender: TObject);
+    procedure Usurios1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -34,14 +35,16 @@ implementation
 
 {$R *.dfm}
 
-uses UFrmLogin;
+uses UFrmLogin, UDM_Login;
 
 procedure TFrmPrincipal.FormCreate(Sender: TObject);
 begin
 flagAtvivar := False;
 Try
   Application.CreateForm(TFrmLogin, FrmLogin);
+
   FrmLogin.ShowModal;
+
 
   if flagAtvivar = False then
     Application.Terminate;
@@ -49,6 +52,26 @@ Try
 Finally
   FreeAndNil(FrmLogin);
 End;
+end;
+
+procedure TFrmPrincipal.Usurios1Click(Sender: TObject);
+begin
+  Try
+    Application.CreateForm(TDM_Login, DM_Login);
+    DM_Login.FDConnection1.Connected := True;
+    DM_Login.FDQ_Usuarios.Active := True;
+
+    if DM_Login.FDQ_UsuariosADM.Value = False then
+      ShowMessage('Você não tem acesso de usuário Adminstrativo!')
+    else
+      ShowMessage('Você é um usuário Adminstrador!');
+
+    DM_Login.FDQ_Usuarios.Active := False;
+    DM_Login.FDConnection1.Connected := False;
+  Finally
+    FreeAndNil(DM_Login);
+  End;
+
 end;
 
 end.
