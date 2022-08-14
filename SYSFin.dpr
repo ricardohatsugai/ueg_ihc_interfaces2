@@ -5,7 +5,10 @@ uses
   UFrmPrincipal in 'UFrmPrincipal.pas' {FrmPrincipal},
   UFrmLogin in 'UFrmLogin.pas' {FrmLogin},
   UDM_Conexao in 'UDM_Conexao.pas' {DM_Conexao: TDataModule},
-  UDM_Login in 'UDM_Login.pas' {DM_Login: TDataModule};
+  UDM_Login in 'UDM_Login.pas' {DM_Login: TDataModule},
+  UDM_CadUsuarios in 'UDM_CadUsuarios.pas' {DM_CadUsuarios: TDataModule},
+  UFrm_ListaUsuarios in 'UFrm_ListaUsuarios.pas' {Frm_ListaUsuarios},
+  UFrm_CadUsuario in 'UFrm_CadUsuario.pas' {Frm_CadUsuario};
 
 {$R *.res}
 
