@@ -14,6 +14,7 @@ object Frm_ListaUsuarios: TFrm_ListaUsuarios
   Font.Style = []
   OldCreateOrder = False
   Position = poScreenCenter
+  OnClose = FormClose
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
@@ -55,6 +56,7 @@ object Frm_ListaUsuarios: TFrm_ListaUsuarios
       TitleFont.Height = -11
       TitleFont.Name = 'Tahoma'
       TitleFont.Style = []
+      OnDblClick = Btn_AlterarClick
       Columns = <
         item
           Expanded = False
@@ -94,7 +96,6 @@ object Frm_ListaUsuarios: TFrm_ListaUsuarios
         item
           Expanded = False
           FieldName = 'ADM'
-          Width = 64
           Visible = True
         end>
     end
@@ -257,6 +258,7 @@ object Frm_ListaUsuarios: TFrm_ListaUsuarios
       NumGlyphs = 2
       ParentFont = False
       TabOrder = 4
+      OnClick = Btn_AlterarClick
     end
   end
 end

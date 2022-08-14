@@ -24,6 +24,8 @@ type
     procedure BtnPesquisarClick(Sender: TObject);
     procedure Btn_FecharClick(Sender: TObject);
     procedure BtnNovoClick(Sender: TObject);
+    procedure Btn_AlterarClick(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private declarations }
   public
@@ -68,11 +70,37 @@ begin
   end;
 end;
 
+procedure TFrm_ListaUsuarios.Btn_AlterarClick(Sender: TObject);
+begin
+  flatCadUsuario := False;
+
+  Try
+    Application.CreateForm(TFrm_CadUsuario, Frm_CadUsuario);
+    Frm_CadUsuario.ShowModal;
+
+    if DM_CadUsuarios.FDQ_ListaUsuarios.UpdateStatus = usModified then
+    begin
+      DM_CadUsuarios.FDQ_ListaUsuarios.Cancel;
+      DM_CadUsuarios.FDQ_ListaUsuarios.CancelUpdates;
+    end;
+
+  Finally
+    FreeAndNil(Frm_CadUsuario);
+  End;
+end;
+
 procedure TFrm_ListaUsuarios.Btn_FecharClick(Sender: TObject);
 begin
-  if MessageDlg('Deseja realmente sair?',mtConfirmation,[mbYes,mbNo],0) = mrYes then
-    ModalResult := -1;
+  Close;
+end;
 
+procedure TFrm_ListaUsuarios.FormClose(Sender: TObject;
+  var Action: TCloseAction);
+begin
+    if MessageDlg('Deseja realmente sair?',mtConfirmation,[mbYes,mbNo],0) = mrYes then
+      ModalResult := -1
+    else
+      Abort;
 end;
 
 procedure TFrm_ListaUsuarios.FormShow(Sender: TObject);

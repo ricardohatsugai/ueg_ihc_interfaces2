@@ -108,7 +108,18 @@ end;
 
 procedure TFrm_CadUsuario.FormShow(Sender: TObject);
 begin
-Edt_Nome.SetFocus;
+  if Frm_ListaUsuarios.flatCadUsuario = False then
+  begin
+    Edt_Nome.Text := DM_CadUsuarios.FDQ_ListaUsuariosNOME.AsString;
+    MaskEdit_Cpf.Text := DM_CadUsuarios.FDQ_ListaUsuariosCPF.AsString;
+    Edit_Identidade.Text := DM_CadUsuarios.FDQ_ListaUsuariosIDENT.AsString;
+    Edit_UserName.Text := DM_CadUsuarios.FDQ_ListaUsuariosUSERNAME.AsString;
+    Edit_Senha.Text := DM_CadUsuarios.FDQ_ListaUsuariosSENHA.AsString;
+    Edit_RepitaSenha.Text := DM_CadUsuarios.FDQ_ListaUsuariosSENHA.AsString;
+    CheckBox_Adm.Checked := DM_CadUsuarios.FDQ_ListaUsuariosADM.AsBoolean;
+  end;
+
+  Edt_Nome.SetFocus;
 end;
 
 end.
