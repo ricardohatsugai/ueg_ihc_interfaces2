@@ -1,0 +1,221 @@
+object Frm_ListaDespesa: TFrm_ListaDespesa
+  Left = 0
+  Top = 0
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsSingle
+  Caption = 'Despesas do m'#234's'
+  ClientHeight = 529
+  ClientWidth = 919
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -16
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poScreenCenter
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 19
+  object Panel1: TPanel
+    Left = 0
+    Top = 104
+    Width = 919
+    Height = 425
+    Align = alBottom
+    TabOrder = 0
+    object Bevel2: TBevel
+      Left = 1
+      Top = 1
+      Width = 917
+      Height = 423
+      Align = alClient
+      ExplicitLeft = 296
+      ExplicitTop = 56
+      ExplicitWidth = 50
+      ExplicitHeight = 50
+    end
+    object DBGrid1: TDBGrid
+      Left = 1
+      Top = 1
+      Width = 917
+      Height = 423
+      Align = alClient
+      DataSource = DM_CadDespesas.DS_ListaDespesas
+      ReadOnly = True
+      TabOrder = 0
+      TitleFont.Charset = DEFAULT_CHARSET
+      TitleFont.Color = clWindowText
+      TitleFont.Height = -16
+      TitleFont.Name = 'Tahoma'
+      TitleFont.Style = []
+      OnDblClick = btn_AlterarClick
+      Columns = <
+        item
+          Expanded = False
+          FieldName = 'ID'
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'DATA'
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'DESCRICAO'
+          Width = 472
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'VALOR'
+          Visible = True
+        end>
+    end
+  end
+  object Panel2: TPanel
+    Left = 0
+    Top = 0
+    Width = 919
+    Height = 104
+    Align = alClient
+    TabOrder = 1
+    ExplicitLeft = 184
+    ExplicitTop = 40
+    ExplicitWidth = 185
+    ExplicitHeight = 41
+    object Bevel1: TBevel
+      Left = 1
+      Top = 1
+      Width = 917
+      Height = 102
+      Align = alClient
+      ExplicitTop = -3
+    end
+    object Lbl_DtIni: TLabel
+      Left = 16
+      Top = 6
+      Width = 77
+      Height = 19
+      Caption = 'Data inicial'
+    end
+    object Lbl_DtFim: TLabel
+      Left = 152
+      Top = 6
+      Width = 67
+      Height = 19
+      Caption = 'Data final'
+    end
+    object Btn_Pesquisar: TBitBtn
+      Left = 17
+      Top = 63
+      Width = 129
+      Height = 35
+      Caption = 'Pesquiar'
+      Glyph.Data = {
+        76010000424D7601000000000000760000002800000020000000100000000100
+        04000000000000010000130B0000130B00001000000000000000000000000000
+        800000800000008080008000000080008000808000007F7F7F00BFBFBF000000
+        FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00333333333333
+        333333333333333333FF33333333333330003FF3FFFFF3333777003000003333
+        300077F777773F333777E00BFBFB033333337773333F7F33333FE0BFBF000333
+        330077F3337773F33377E0FBFBFBF033330077F3333FF7FFF377E0BFBF000000
+        333377F3337777773F3FE0FBFBFBFBFB039977F33FFFFFFF7377E0BF00000000
+        339977FF777777773377000BFB03333333337773FF733333333F333000333333
+        3300333777333333337733333333333333003333333333333377333333333333
+        333333333333333333FF33333333333330003333333333333777333333333333
+        3000333333333333377733333333333333333333333333333333}
+      NumGlyphs = 2
+      TabOrder = 2
+      OnClick = Btn_PesquisarClick
+    end
+    object DateTimePicker1_Ini: TDateTimePicker
+      Left = 16
+      Top = 31
+      Width = 113
+      Height = 27
+      Date = 44787.715574108800000000
+      Time = 44787.715574108800000000
+      TabOrder = 0
+    end
+    object DateTimePicker_fim: TDateTimePicker
+      Left = 152
+      Top = 31
+      Width = 113
+      Height = 27
+      Date = 44787.716000555560000000
+      Time = 44787.716000555560000000
+      TabOrder = 1
+    end
+    object Btn_Lancamento: TBitBtn
+      Left = 392
+      Top = 17
+      Width = 161
+      Height = 41
+      Caption = 'Lan'#231'ar desp.'
+      Glyph.Data = {
+        76010000424D7601000000000000760000002800000020000000100000000100
+        04000000000000010000120B0000120B00001000000000000000000000000000
+        800000800000008080008000000080008000808000007F7F7F00BFBFBF000000
+        FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00337000000000
+        73333337777777773F333308888888880333337F3F3F3FFF7F33330808089998
+        0333337F737377737F333308888888880333337F3F3F3F3F7F33330808080808
+        0333337F737373737F333308888888880333337F3F3F3F3F7F33330808080808
+        0333337F737373737F333308888888880333337F3F3F3F3F7F33330808080808
+        0333337F737373737F333308888888880333337F3FFFFFFF7F33330800000008
+        0333337F7777777F7F333308000E0E080333337F7FFFFF7F7F33330800000008
+        0333337F777777737F333308888888880333337F333333337F33330888888888
+        03333373FFFFFFFF733333700000000073333337777777773333}
+      NumGlyphs = 2
+      TabOrder = 3
+      OnClick = Btn_LancamentoClick
+    end
+    object btn_Alterar: TBitBtn
+      Left = 568
+      Top = 17
+      Width = 161
+      Height = 41
+      Caption = 'Alterar desp.'
+      Glyph.Data = {
+        76010000424D7601000000000000760000002800000020000000100000000100
+        04000000000000010000120B0000120B00001000000000000000000000000000
+        800000800000008080008000000080008000808000007F7F7F00BFBFBF000000
+        FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00333333000000
+        000033333377777777773333330FFFFFFFF03FF3FF7FF33F3FF700300000FF0F
+        00F077F777773F737737E00BFBFB0FFFFFF07773333F7F3333F7E0BFBF000FFF
+        F0F077F3337773F3F737E0FBFBFBF0F00FF077F3333FF7F77F37E0BFBF00000B
+        0FF077F3337777737337E0FBFBFBFBF0FFF077F33FFFFFF73337E0BF0000000F
+        FFF077FF777777733FF7000BFB00B0FF00F07773FF77373377373330000B0FFF
+        FFF03337777373333FF7333330B0FFFF00003333373733FF777733330B0FF00F
+        0FF03333737F37737F373330B00FFFFF0F033337F77F33337F733309030FFFFF
+        00333377737FFFFF773333303300000003333337337777777333}
+      NumGlyphs = 2
+      TabOrder = 4
+      OnClick = btn_AlterarClick
+    end
+    object Btn_Escluir: TBitBtn
+      Left = 744
+      Top = 17
+      Width = 161
+      Height = 41
+      Caption = 'Excluir desp.'
+      Glyph.Data = {
+        76010000424D7601000000000000760000002800000020000000100000000100
+        04000000000000010000130B0000130B00001000000000000000000000000000
+        800000800000008080008000000080008000808000007F7F7F00BFBFBF000000
+        FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00333333333333
+        333333333333333333FF33333333333330003333333333333777333333333333
+        300033FFFFFF3333377739999993333333333777777F3333333F399999933333
+        3300377777733333337733333333333333003333333333333377333333333333
+        3333333333333333333F333333333333330033333F33333333773333C3333333
+        330033337F3333333377333CC3333333333333F77FFFFFFF3FF33CCCCCCCCCC3
+        993337777777777F77F33CCCCCCCCCC399333777777777737733333CC3333333
+        333333377F33333333FF3333C333333330003333733333333777333333333333
+        3000333333333333377733333333333333333333333333333333}
+      NumGlyphs = 2
+      TabOrder = 5
+      OnClick = Btn_EscluirClick
+    end
+  end
+end

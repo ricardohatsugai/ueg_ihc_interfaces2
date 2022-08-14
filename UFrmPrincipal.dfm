@@ -9983,6 +9983,7 @@ object FrmPrincipal: TFrmPrincipal
         Caption = 'Despesas'
         Hint = 'Cadastros de Despesas'
         ShortCut = 16452
+        OnClick = Despesa1Click
       end
       object N1: TMenuItem
         Caption = '-'

@@ -21,6 +21,7 @@ type
     StatusBar1: TStatusBar;
     procedure FormCreate(Sender: TObject);
     procedure Usurios1Click(Sender: TObject);
+    procedure Despesa1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -35,7 +36,35 @@ implementation
 
 {$R *.dfm}
 
-uses UFrmLogin, UDM_Login, UDM_CadUsuarios, UFrm_ListaUsuarios;
+uses UFrmLogin, UDM_Login, UDM_CadUsuarios, UFrm_ListaUsuarios, UDM_CadDespesas,
+  UFrm_ListaDespesas;
+
+procedure TFrmPrincipal.Despesa1Click(Sender: TObject);
+begin
+  Try
+    Application.CreateForm(TDM_CadDespesas, DM_CadDespesas);
+    Application.CreateForm(TFrm_ListaDespesa, Frm_ListaDespesa);
+    DM_CadDespesas.FDConnection1.Connected := True;
+    DM_CadDespesas.FDQ_ListaDespesa.Active := True;
+    Frm_ListaDespesa.ShowModal;
+
+    if DM_CadDespesas.FDQ_ListaDespesa.UpdateStatus = usModified then
+    begin
+      DM_CadDespesas.FDQ_ListaDespesa.Cancel;
+      DM_CadDespesas.FDQ_ListaDespesa.CancelUpdates;
+    end;
+
+    if DM_CadDespesas.FDConnection1.InTransaction then
+      DM_CadDespesas.FDConnection1.Rollback;
+
+    DM_CadDespesas.FDQ_ListaDespesa.Active := False;
+    DM_CadDespesas.FDConnection1.Connected := False;
+
+  Finally
+    FreeAndNil(Frm_ListaDespesa);
+    FreeAndNil(DM_CadDespesas);
+  End;
+end;
 
 procedure TFrmPrincipal.FormCreate(Sender: TObject);
 begin
