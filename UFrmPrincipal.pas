@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, Vcl.Imaging.pngimage,
-  Vcl.ExtCtrls, Vcl.ComCtrls, DB;
+  Vcl.ExtCtrls, Vcl.ComCtrls, DB, Vcl.ToolWin;
 
 type
   TFrmPrincipal = class(TForm)
@@ -19,6 +19,9 @@ type
     Bevel1: TBevel;
     Image1: TImage;
     StatusBar1: TStatusBar;
+    ToolBar1: TToolBar;
+    Panel_CadDespesas: TPanel;
+    Image2: TImage;
     procedure FormCreate(Sender: TObject);
     procedure Usurios1Click(Sender: TObject);
     procedure Despesa1Click(Sender: TObject);
