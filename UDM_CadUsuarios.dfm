@@ -10,10 +10,11 @@ inherited DM_CadUsuarios: TDM_CadUsuarios
     Top = 32
   end
   inherited FDGUIxWaitCursor1: TFDGUIxWaitCursor
-    Left = 512
+    Left = 664
+    Top = 24
   end
-  inherited FDPhysFBDriverLink1: TFDPhysFBDriverLink
-    Left = 648
+  inherited FDPhysMSAccessDriverLink1: TFDPhysMSAccessDriverLink
+    Left = 496
   end
   object FDQ_ListaUsuarios: TFDQuery
     CachedUpdates = True
@@ -24,49 +25,45 @@ inherited DM_CadUsuarios: TDM_CadUsuarios
       'ORDER BY a.NOME;')
     Left = 112
     Top = 120
-    object FDQ_ListaUsuariosID: TIntegerField
-      AutoGenerateValue = arAutoInc
+    object FDQ_ListaUsuariosID: TFDAutoIncField
       FieldName = 'ID'
-      Origin = 'ID'
-      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
-      Required = True
+      Origin = 'id'
+      ProviderFlags = [pfInWhere, pfInKey]
+      ReadOnly = True
     end
-    object FDQ_ListaUsuariosNOME: TStringField
+    object FDQ_ListaUsuariosNOME: TWideStringField
       DisplayLabel = 'Nome'
       FieldName = 'NOME'
-      Origin = 'NOME'
-      Required = True
+      Origin = 'nome'
       Size = 30
     end
-    object FDQ_ListaUsuariosCPF: TStringField
+    object FDQ_ListaUsuariosCPF: TWideStringField
       FieldName = 'CPF'
-      Origin = 'CPF'
+      Origin = 'cpf'
       Size = 11
     end
-    object FDQ_ListaUsuariosIDENT: TStringField
+    object FDQ_ListaUsuariosIDENT: TWideStringField
       DisplayLabel = 'Identidade'
       FieldName = 'IDENT'
-      Origin = 'IDENT'
+      Origin = 'ident'
       Size = 30
     end
-    object FDQ_ListaUsuariosUSERNAME: TStringField
+    object FDQ_ListaUsuariosUSERNAME: TWideStringField
       DisplayLabel = 'Username'
       FieldName = 'USERNAME'
-      Origin = 'USERNAME'
-      Required = True
+      Origin = 'username'
       Size = 30
     end
-    object FDQ_ListaUsuariosSENHA: TStringField
+    object FDQ_ListaUsuariosSENHA: TWideStringField
       DisplayLabel = 'Senha'
       FieldName = 'SENHA'
-      Origin = 'SENHA'
-      Required = True
+      Origin = 'senha'
       Size = 50
     end
     object FDQ_ListaUsuariosADM: TBooleanField
-      DisplayLabel = 'Adminstrador'
       FieldName = 'ADM'
-      Origin = 'ADM'
+      Origin = 'adm'
+      Required = True
     end
   end
   object DS_ListaUsuarios: TDataSource

@@ -8,18 +8,19 @@ uses
   FireDAC.Stan.Def, FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys,
   FireDAC.Phys.FB, FireDAC.Phys.FBDef, FireDAC.VCLUI.Wait, FireDAC.Phys.IBBase,
   FireDAC.Comp.UI, FireDAC.Comp.Client, Data.DB, FireDAC.Stan.Param,
-  FireDAC.DatS, FireDAC.DApt.Intf, FireDAC.DApt, FireDAC.Comp.DataSet;
+  FireDAC.DatS, FireDAC.DApt.Intf, FireDAC.DApt, FireDAC.Comp.DataSet,
+  FireDAC.Phys.MSAcc, FireDAC.Phys.MSAccDef, FireDAC.Phys.ODBCBase;
 
 type
   TDM_Login = class(TDM_Conexao)
     FDQ_Usuarios: TFDQuery;
-    FDQ_UsuariosID: TIntegerField;
-    FDQ_UsuariosNOME: TStringField;
-    FDQ_UsuariosCPF: TStringField;
-    FDQ_UsuariosIDENT: TStringField;
-    FDQ_UsuariosUSERNAME: TStringField;
-    FDQ_UsuariosSENHA: TStringField;
-    FDQ_UsuariosADM: TBooleanField;
+    FDQ_Usuariosid: TFDAutoIncField;
+    FDQ_Usuariosnome: TWideStringField;
+    FDQ_Usuarioscpf: TWideStringField;
+    FDQ_Usuariosident: TWideStringField;
+    FDQ_Usuariosusername: TWideStringField;
+    FDQ_Usuariossenha: TWideStringField;
+    FDQ_Usuariosadm: TBooleanField;
   private
     { Private declarations }
   public

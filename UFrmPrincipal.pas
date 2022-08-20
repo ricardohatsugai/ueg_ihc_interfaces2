@@ -85,12 +85,8 @@ end;
 
 procedure TFrmPrincipal.Usurios1Click(Sender: TObject);
 begin
-  Try
-    Application.CreateForm(TDM_Login, DM_Login);
-    DM_Login.FDConnection1.Connected := True;
-    DM_Login.FDQ_Usuarios.Active := True;
 
-    if DM_Login.FDQ_UsuariosADM.Value = False then
+    if DM_Login.FDQ_Usuariosadm.Value = False then
       ShowMessage('Você não tem acesso de usuário Adminstrativo!')
     else
       //ShowMessage('Você é um usuário Adminstrador!');
@@ -119,11 +115,6 @@ begin
         FreeAndNil(DM_CadUsuarios);
       End;
 
-    DM_Login.FDQ_Usuarios.Active := False;
-    DM_Login.FDConnection1.Connected := False;
-  Finally
-    FreeAndNil(DM_Login);
-  End;
 
 end;
 
