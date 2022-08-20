@@ -25,6 +25,7 @@ type
     procedure FormCreate(Sender: TObject);
     procedure Usurios1Click(Sender: TObject);
     procedure Despesa1Click(Sender: TObject);
+    procedure Sair1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -84,6 +85,11 @@ Try
 Finally
   FreeAndNil(FrmLogin);
 End;
+end;
+
+procedure TFrmPrincipal.Sair1Click(Sender: TObject);
+begin
+  Close;
 end;
 
 procedure TFrmPrincipal.Usurios1Click(Sender: TObject);

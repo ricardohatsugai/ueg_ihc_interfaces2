@@ -14777,6 +14777,7 @@ object FrmPrincipal: TFrmPrincipal
       object Sair1: TMenuItem
         Caption = 'Sair'
         ShortCut = 114
+        OnClick = Sair1Click
       end
     end
   end
