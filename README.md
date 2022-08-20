@@ -23,7 +23,7 @@
 
 ### Ferramentas utilizadas para este projeto:
 - Delphi 10.1 (Berlin-Trial).
-- Firebird 4.0
+- Access (modo compatibilidade 2003)
 
 ## **Sobre o sistema**
 
