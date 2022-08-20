@@ -23,7 +23,7 @@
 
 ### Ferramentas utilizadas para este projeto:
 - Delphi 10.1 (Berlin-Trial).
-- Firebird 3.5
+- Firebird 4.0
 
 ## **Sobre o sistema**
 
