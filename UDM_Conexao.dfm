@@ -31,6 +31,7 @@ object DM_Conexao: TDM_Conexao
     Top = 32
   end
   object FDPhysFBDriverLink1: TFDPhysFBDriverLink
+    VendorLib = 'C:\ueg_ihc_interfaces2\fbclient.dll'
     Left = 456
     Top = 32
   end
