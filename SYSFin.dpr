@@ -21,5 +21,6 @@ begin
   Application.MainFormOnTaskbar := True;
   Application.Title := 'SYSFIN - Sistema de Gerenciamento de Finanças';
   Application.CreateForm(TFrmPrincipal, FrmPrincipal);
+  Application.CreateForm(TDM_Login, DM_Login);
   Application.Run;
 end.

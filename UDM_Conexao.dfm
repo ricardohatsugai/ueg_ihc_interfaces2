@@ -4,11 +4,9 @@ object DM_Conexao: TDM_Conexao
   Width = 731
   object FDConnection1: TFDConnection
     Params.Strings = (
-      'Database=C:\ueg_ihc_interfaces2\BANCO.FDB'
-      'User_Name=SYSDBA'
-      'Password=masterkey'
-      'Server=localhost'
-      'DriverID=FB')
+      'Database=C:\ueg_ihc_interfaces2\BANCO.mdb'
+      'User_Name=sa'
+      'DriverID=MSAcc')
     LoginPrompt = False
     Transaction = FDTransaction_principal
     UpdateTransaction = FDTransaction_Aux
@@ -30,9 +28,8 @@ object DM_Conexao: TDM_Conexao
     Left = 320
     Top = 32
   end
-  object FDPhysFBDriverLink1: TFDPhysFBDriverLink
-    VendorLib = 'C:\ueg_ihc_interfaces2\fbclient.dll'
-    Left = 456
+  object FDPhysMSAccessDriverLink1: TFDPhysMSAccessDriverLink
+    Left = 464
     Top = 32
   end
 end

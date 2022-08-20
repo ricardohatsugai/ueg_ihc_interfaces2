@@ -7,7 +7,8 @@ uses
   FireDAC.Stan.Error, FireDAC.UI.Intf, FireDAC.Phys.Intf, FireDAC.Stan.Def,
   FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys, FireDAC.Phys.FB,
   FireDAC.Phys.FBDef, FireDAC.VCLUI.Wait, FireDAC.Phys.IBBase, FireDAC.Comp.UI,
-  FireDAC.Comp.Client, Data.DB;
+  FireDAC.Comp.Client, Data.DB, FireDAC.Phys.MSAcc, FireDAC.Phys.MSAccDef,
+  FireDAC.Phys.ODBCBase;
 
 type
   TDM_Conexao = class(TDataModule)
@@ -15,7 +16,7 @@ type
     FDTransaction_principal: TFDTransaction;
     FDTransaction_Aux: TFDTransaction;
     FDGUIxWaitCursor1: TFDGUIxWaitCursor;
-    FDPhysFBDriverLink1: TFDPhysFBDriverLink;
+    FDPhysMSAccessDriverLink1: TFDPhysMSAccessDriverLink;
   private
     { Private declarations }
   public

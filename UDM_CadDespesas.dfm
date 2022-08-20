@@ -12,10 +12,7 @@ inherited DM_CadDespesas: TDM_CadDespesas
   inherited FDGUIxWaitCursor1: TFDGUIxWaitCursor
     Left = 432
   end
-  inherited FDPhysFBDriverLink1: TFDPhysFBDriverLink
-    Left = 568
-  end
-  object FDQ_ListaDespesa: TFDQuery
+  object FDQ_ListaDespesa: TFDQuery [4]
     CachedUpdates = True
     Connection = FDConnection1
     SQL.Strings = (
@@ -38,36 +35,30 @@ inherited DM_CadDespesas: TDM_CadDespesas
         ParamType = ptInput
         Value = 0d
       end>
-    object FDQ_ListaDespesaID: TIntegerField
-      AutoGenerateValue = arAutoInc
-      DisplayLabel = 'Id'
+    object FDQ_ListaDespesaID: TFDAutoIncField
       FieldName = 'ID'
-      Origin = 'ID'
-      Required = True
+      Origin = 'id'
+      ProviderFlags = [pfInWhere, pfInKey]
+      ReadOnly = True
     end
-    object FDQ_ListaDespesaDATA: TDateField
+    object FDQ_ListaDespesaDATA: TSQLTimeStampField
       DisplayLabel = 'Data'
       FieldName = 'DATA'
-      Origin = '"DATA"'
-      Required = True
+      Origin = 'data'
     end
-    object FDQ_ListaDespesaDESCRICAO: TStringField
+    object FDQ_ListaDespesaDESCRICAO: TWideStringField
       DisplayLabel = 'Descri'#231#227'o'
       FieldName = 'DESCRICAO'
-      Origin = 'DESCRICAO'
-      Required = True
+      Origin = 'descricao'
       Size = 30
     end
-    object FDQ_ListaDespesaVALOR: TBCDField
+    object FDQ_ListaDespesaVALOR: TCurrencyField
       DisplayLabel = 'Valor'
       FieldName = 'VALOR'
-      Origin = 'VALOR'
-      Required = True
-      Precision = 18
-      Size = 2
+      Origin = 'valor'
     end
   end
-  object DS_ListaDespesas: TDataSource
+  object DS_ListaDespesas: TDataSource [5]
     DataSet = FDQ_ListaDespesa
     Left = 72
     Top = 184

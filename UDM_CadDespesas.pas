@@ -8,16 +8,17 @@ uses
   FireDAC.Stan.Def, FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys,
   FireDAC.Phys.FB, FireDAC.Phys.FBDef, FireDAC.VCLUI.Wait, FireDAC.Phys.IBBase,
   FireDAC.Comp.UI, FireDAC.Comp.Client, Data.DB, FireDAC.Stan.Param,
-  FireDAC.DatS, FireDAC.DApt.Intf, FireDAC.DApt, FireDAC.Comp.DataSet;
+  FireDAC.DatS, FireDAC.DApt.Intf, FireDAC.DApt, FireDAC.Comp.DataSet,
+  FireDAC.Phys.MSAcc, FireDAC.Phys.MSAccDef, FireDAC.Phys.ODBCBase;
 
 type
   TDM_CadDespesas = class(TDM_Conexao)
     FDQ_ListaDespesa: TFDQuery;
-    FDQ_ListaDespesaID: TIntegerField;
-    FDQ_ListaDespesaDATA: TDateField;
-    FDQ_ListaDespesaDESCRICAO: TStringField;
-    FDQ_ListaDespesaVALOR: TBCDField;
     DS_ListaDespesas: TDataSource;
+    FDQ_ListaDespesaID: TFDAutoIncField;
+    FDQ_ListaDespesaDATA: TSQLTimeStampField;
+    FDQ_ListaDespesaDESCRICAO: TWideStringField;
+    FDQ_ListaDespesaVALOR: TCurrencyField;
   private
     { Private declarations }
   public
