@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, Vcl.Imaging.pngimage,
-  Vcl.ExtCtrls, Vcl.ComCtrls, DB, Vcl.ToolWin;
+  Vcl.ExtCtrls, Vcl.ComCtrls, DB, Vcl.ToolWin, Vcl.Imaging.jpeg;
 
 type
   TFrmPrincipal = class(TForm)
@@ -25,11 +25,15 @@ type
     Pesquisas1: TMenuItem;
     Despesas1: TMenuItem;
     Image3: TImage;
+    Sobre1: TMenuItem;
+    Quemsomos1: TMenuItem;
+    Image4: TImage;
     procedure FormCreate(Sender: TObject);
     procedure Usurios1Click(Sender: TObject);
     procedure Despesa1Click(Sender: TObject);
     procedure Sair1Click(Sender: TObject);
     procedure Despesas1Click(Sender: TObject);
+    procedure Quemsomos1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -46,7 +50,7 @@ implementation
 
 uses UFrmLogin, UDM_Login, UDM_CadUsuarios, UFrm_ListaUsuarios, UDM_CadDespesas,
   UFrm_ListaDespesas, UDM_PesquisaDespesas,
-  UFrm_PesqDespesasPorUsuarioEntreDatas;
+  UFrm_PesqDespesasPorUsuarioEntreDatas, UFrm_About;
 
 procedure TFrmPrincipal.Despesa1Click(Sender: TObject);
 begin
@@ -112,6 +116,16 @@ Try
 Finally
   FreeAndNil(FrmLogin);
 End;
+end;
+
+procedure TFrmPrincipal.Quemsomos1Click(Sender: TObject);
+begin
+  Try
+    Application.CreateForm(TAboutBox, AboutBox);
+    AboutBox.ShowModal;
+  Finally
+    FreeAndNil(AboutBox);
+  End;
 end;
 
 procedure TFrmPrincipal.Sair1Click(Sender: TObject);

@@ -72,7 +72,7 @@ end;
 
 procedure TFrm_Lancamento.Btn_salvarKeyPress(Sender: TObject; var Key: Char);
 begin
-  if not (key in ['0'..'9',',',#8]) then
+  if not CharInSet(key,['0'..'9',',',#8]) then
     key := #0;
 end;
 
