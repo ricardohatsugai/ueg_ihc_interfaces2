@@ -12,7 +12,9 @@ uses
   UDM_CadDespesas in 'UDM_CadDespesas.pas' {DM_CadDespesas: TDataModule},
   UFrm_ListaDespesas in 'UFrm_ListaDespesas.pas' {Frm_ListaDespesa},
   UFrm_Lancamento in 'UFrm_Lancamento.pas' {Frm_Lancamento},
-  U_Funcoes in 'U_Funcoes.pas';
+  U_Funcoes in 'U_Funcoes.pas',
+  UDM_PesquisaDespesas in 'UDM_PesquisaDespesas.pas' {DM_PesquisaDespesas: TDataModule},
+  UFrm_PesqDespesasPorUsuarioEntreDatas in 'UFrm_PesqDespesasPorUsuarioEntreDatas.pas' {Frm_PesqDespesasPorDatasEUsuario};
 
 {$R *.res}
 
@@ -20,7 +22,7 @@ begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
   Application.Title := 'SYSFIN - Sistema de Gerenciamento de Finanças';
-  Application.CreateForm(TFrmPrincipal, FrmPrincipal);
   Application.CreateForm(TDM_Login, DM_Login);
+  Application.CreateForm(TFrmPrincipal, FrmPrincipal);
   Application.Run;
 end.

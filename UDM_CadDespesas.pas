@@ -19,6 +19,16 @@ type
     FDQ_ListaDespesaDATA: TSQLTimeStampField;
     FDQ_ListaDespesaDESCRICAO: TWideStringField;
     FDQ_ListaDespesaVALOR: TCurrencyField;
+    FDQ_ListaDespesaID_USUARIO: TIntegerField;
+    FDTable_Usuario: TFDTable;
+    FDTable_Usuarioid: TFDAutoIncField;
+    FDTable_Usuarionome: TWideStringField;
+    FDTable_Usuariocpf: TWideStringField;
+    FDTable_Usuarioident: TWideStringField;
+    FDTable_Usuariousername: TWideStringField;
+    FDTable_Usuariosenha: TWideStringField;
+    FDTable_Usuarioadm: TBooleanField;
+    FDQ_ListaDespesaUSUARIO_LOOK: TStringField;
   private
     { Private declarations }
   public

@@ -59,6 +59,7 @@ object Frm_ListaDespesa: TFrm_ListaDespesa
         item
           Expanded = False
           FieldName = 'DATA'
+          Width = 187
           Visible = True
         end
         item
@@ -81,10 +82,6 @@ object Frm_ListaDespesa: TFrm_ListaDespesa
     Height = 104
     Align = alClient
     TabOrder = 1
-    ExplicitLeft = 184
-    ExplicitTop = 40
-    ExplicitWidth = 185
-    ExplicitHeight = 41
     object Bevel1: TBevel
       Left = 1
       Top = 1

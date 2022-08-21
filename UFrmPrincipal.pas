@@ -22,9 +22,14 @@ type
     ToolBar1: TToolBar;
     Panel_CadDespesas: TPanel;
     Image2: TImage;
+    Pesquisas1: TMenuItem;
+    Despesas1: TMenuItem;
+    Image3: TImage;
     procedure FormCreate(Sender: TObject);
     procedure Usurios1Click(Sender: TObject);
     procedure Despesa1Click(Sender: TObject);
+    procedure Sair1Click(Sender: TObject);
+    procedure Despesas1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -40,7 +45,8 @@ implementation
 {$R *.dfm}
 
 uses UFrmLogin, UDM_Login, UDM_CadUsuarios, UFrm_ListaUsuarios, UDM_CadDespesas,
-  UFrm_ListaDespesas;
+  UFrm_ListaDespesas, UDM_PesquisaDespesas,
+  UFrm_PesqDespesasPorUsuarioEntreDatas;
 
 procedure TFrmPrincipal.Despesa1Click(Sender: TObject);
 begin
@@ -69,6 +75,28 @@ begin
   End;
 end;
 
+procedure TFrmPrincipal.Despesas1Click(Sender: TObject);
+begin
+  Try
+    Application.CreateForm(TDM_PesquisaDespesas, DM_PesquisaDespesas);
+    Application.CreateForm(TFrm_PesqDespesasPorDatasEUsuario, Frm_PesqDespesasPorDatasEUsuario);
+    DM_PesquisaDespesas.FDT_Usuario.Active := True;
+    DM_PesquisaDespesas.FDQ_PesqDespesasPorUsuario.Active := True;
+    Frm_PesqDespesasPorDatasEUsuario.ShowModal;
+
+    if DM_PesquisaDespesas.FDQ_PesqDespesasPorUsuario.Active = True then
+      DM_PesquisaDespesas.FDQ_PesqDespesasPorUsuario.Active := False;
+
+    if DM_PesquisaDespesas.FDT_Usuario.Active = True then
+      DM_PesquisaDespesas.FDT_Usuario.Active := False;
+
+
+  Finally
+    FreeAndNil(Frm_PesqDespesasPorDatasEUsuario);
+    FreeAndNil(DM_PesquisaDespesas);
+  End;
+end;
+
 procedure TFrmPrincipal.FormCreate(Sender: TObject);
 begin
 flagAtvivar := False;
@@ -84,6 +112,11 @@ Try
 Finally
   FreeAndNil(FrmLogin);
 End;
+end;
+
+procedure TFrmPrincipal.Sair1Click(Sender: TObject);
+begin
+  Close;
 end;
 
 procedure TFrmPrincipal.Usurios1Click(Sender: TObject);

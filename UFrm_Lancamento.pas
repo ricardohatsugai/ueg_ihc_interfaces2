@@ -32,7 +32,7 @@ implementation
 
 {$R *.dfm}
 
-uses UDM_CadDespesas, UFrm_ListaDespesas;
+uses UDM_CadDespesas, UFrm_ListaDespesas, UDM_Login;
 
 procedure TFrm_Lancamento.Btn_salvarClick(Sender: TObject);
 begin
@@ -57,6 +57,7 @@ begin
         DM_CadDespesas.FDQ_ListaDespesaDATA.AsDateTime := DateTimePicker_Data.Date;
         DM_CadDespesas.FDQ_ListaDespesaDESCRICAO.AsString := Edit_Descricao.Text;
         DM_CadDespesas.FDQ_ListaDespesaVALOR.AsCurrency := StrToCurr(Edit_Valor.Text);
+        DM_CadDespesas.FDQ_ListaDespesaID_USUARIO.Value := DM_Login.FDQ_Usuariosid.AsInteger;
 
         DM_CadDespesas.FDQ_ListaDespesa.Post;
         DM_CadDespesas.FDQ_ListaDespesa.ApplyUpdates(-1);
