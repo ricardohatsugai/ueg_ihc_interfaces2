@@ -42,8 +42,6 @@ begin
     Edit1.SetFocus;
   end else
   begin
-    Try
-      Application.CreateForm(TDM_Login, DM_Login);
       DM_Login.FDConnection1.Connected := True;
       DM_Login.FDQ_Usuarios.Active := True;
       DM_Login.FDQ_Usuarios.First;
@@ -67,15 +65,12 @@ begin
       end;
 
 
-      if DM_Login.FDQ_Usuarios.Active = True then
+      {if DM_Login.FDQ_Usuarios.Active = True then
         DM_Login.FDQ_Usuarios.Active := False;
 
       if DM_Login.FDConnection1.Connected = True then
-        DM_Login.FDConnection1.Connected := False;
+        DM_Login.FDConnection1.Connected := False;}
 
-    Finally
-      FreeAndNil(DM_Login);
-    End;
 
   end;
 end;
