@@ -14,7 +14,8 @@ uses
   UFrm_Lancamento in 'UFrm_Lancamento.pas' {Frm_Lancamento},
   U_Funcoes in 'U_Funcoes.pas',
   UDM_PesquisaDespesas in 'UDM_PesquisaDespesas.pas' {DM_PesquisaDespesas: TDataModule},
-  UFrm_PesqDespesasPorUsuarioEntreDatas in 'UFrm_PesqDespesasPorUsuarioEntreDatas.pas' {Frm_PesqDespesasPorDatasEUsuario};
+  UFrm_PesqDespesasPorUsuarioEntreDatas in 'UFrm_PesqDespesasPorUsuarioEntreDatas.pas' {Frm_PesqDespesasPorDatasEUsuario},
+  UFrm_About in 'UFrm_About.pas' {AboutBox};
 
 {$R *.res}
 
